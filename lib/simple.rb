@@ -1,4 +1,4 @@
-Dir[File.absolute_path(".") + "/lib/simple/*.rb"].each do |file|
+Dir[File.absolute_path(".") + "/lib/simple/**/*.rb"].each do |file|
   require file
 end
 
