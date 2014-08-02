@@ -1,13 +1,7 @@
-class Number < Struct.new(:value)
+require_relative '../simple_struct'
+
+class Number < SimpleStruct.new(:value)
   def to_s
     value.to_s
-  end
-
-  def inspect
-    "<#{self}>"
-  end
-
-  def reducible?
-    false
   end
 end

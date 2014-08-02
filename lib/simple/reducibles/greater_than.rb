@@ -1,14 +1,8 @@
-class GreaterThan < Struct.new(:left, :right)
+require_relative '../simple_struct'
+
+class GreaterThan < SimpleStruct.new(:left, :right)
   def to_s
     "#{left} > #{right}"
-  end
-
-  def inspect
-    "<#{self}>"
-  end
-
-  def reducible?
-    true
   end
 
   def reduce
