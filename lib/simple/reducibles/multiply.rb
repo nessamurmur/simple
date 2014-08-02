@@ -5,11 +5,11 @@ class Multiply < SimpleStruct.new(:left, :right)
     "#{left} * #{right}"
   end
 
-  def reduce
+  def reduce(environment)
     if left.reducible?
-      Multiply.new(left.reduce, right)
+      Multiply.new(left.reduce(environment), right)
     elsif right.reducible?
-      Multiply.new(left, right.reduce)
+      Multiply.new(left, right.reduce(environment))
     else
       Number.new(left.value + right.value)
     end

@@ -5,7 +5,7 @@ class Variable < SimpleStruct.new(:name)
     name.to_s
   end
 
-  def reduce
-
+  def reduce(environment)
+    environment[name]
   end
 end
