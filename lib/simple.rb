@@ -1,8 +1,6 @@
-require "simple/version"
-require "simple/number"
-require "simple/multiply"
-require "simple/add"
-require "simple/machine"
+Dir[File.absolute_path(".") + "/lib/simple/*.rb"].each do |file|
+  require file
+end
 
 module Simple
   # Your code goes here...
