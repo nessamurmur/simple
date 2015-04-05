@@ -14,4 +14,8 @@ class GreaterThan < SimpleStruct.new(:left, :right)
       Boolean.new(left.value > right.value)
     end
   end
+
+  def evaluate(environment)
+    Boolean.new(left.evaluate(environment).value > right.evaluate(environment).value)
+  end
 end
