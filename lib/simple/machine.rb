@@ -1,12 +1,12 @@
 class Machine < Struct.new(:statement, :environment)
-  def step!
+  def step
     self.statement, self.environment = statement.reduce(environment)
   end
 
-  def run!
+  def run
     while statement.reducible?
       log
-      step!
+      step
     end
     log
   end
