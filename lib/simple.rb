@@ -3,5 +3,8 @@ Dir[File.absolute_path(".") + "/lib/simple/**/*.rb"].each do |file|
 end
 
 module Simple
-  # Your code goes here...
+  RubyVM::InstructionSequence.compile_option = {
+    tailcall_optimization: true,
+    trace_instruction: false
+  }
 end
